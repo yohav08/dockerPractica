@@ -1,16 +1,16 @@
 version: '3.1'
 services:
   nodeapp:
-    image: node:18
-    container_name: nodeapp
+    image: yohav08/nodeapp
+    container_name: nodeapp-mongo
     ports:
       - 3000:3000
     volumes:
-      - .:/app
-    working_dir: /app
-    command: npm install -g npm@9.6.2 & npm install & node app/index.js
+      - ./:/code
     environment:
       - NODE_PORT=3000
+    depends_on:
+      - mongo
   mongo:
     image: mongo:4.4
     container_name: mongodb

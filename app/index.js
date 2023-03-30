@@ -1,10 +1,11 @@
-import express from express;
+import express from "express";
+console.log("la gata de yohana es una loca :V")
 
 const app = express();
-const port = process.env.NODE_PORT;
+const port = process.env.NODE_PORT || 3000;
 
 app.get('/', async (req,res)=>{
-    res.send('Hello World');º
+    res.send('Hello World');
 });
 
 app.listen(port, () => {
